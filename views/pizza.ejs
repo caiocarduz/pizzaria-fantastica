@@ -10,13 +10,19 @@
 <body>
 	<link rel="stylesheet" href="/css/pizza.css">
 	<main>
-		<h1>Fracatu</h1>
-		<h2>R$ 60,00</h2>
-		<img src="/img/fracatu.jpg" alt="Fracatu">
-		<div>Ingredientes: Mussarela, frango desfiado, requeijão</div>
+		<h1><%= pizza.nome %> </h1>
+		<h2><%= pizza.preco %> </h2>
+		<img src=<%= pizza.img %>  alt="Fracatu">
+		<div><%= pizza.ingredientes %> </div>
 		<button>+ Add</button>
-		<a href="/pizzas/3" class="prev">&lt;</a>
-		<a href="/pizzas/5" class="next">&gt;</a>
-	</main>
+
+		<% if(idPrev){ %>
+			<a href="/pizzas/<%= idPrev %>" class="prev">&lt;</a>
+			<% } %>
+	
+			<% if(idNext){ %>
+			<a href="/pizzas/<%= idNext %>" class="next">&gt;</a>
+		<% } %>
+		
 </body>
 </html>

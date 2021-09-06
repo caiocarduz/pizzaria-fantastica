@@ -9,21 +9,22 @@
 </head>
 <body>
 	<link rel="stylesheet" href="/css/index.css">
-	<form>
-		<input type="text" name="busca" placeholder="Qual pizza você procura?" autocomplete="off">
+	<form action="/busca" method="get">
+		<input type="text" name="q" placeholder="Qual pizza você procura?" autocomplete="off" value= <% busca %>  >
 		<button type="submit">Buscar</button>
 	</form>
 	<main>
-			<% pizzas.forEach(element => { %>
-				<article>
-					<img src= <%= element.img %>  alt="Pepperoni">
-					<a href= '/pizzas/<%= element.id %>' >Ver Mais</a>
-					<button>+ Add</button>
-					<div><%= element.nome %> </div>
-					<span><%= element.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}); %> </span>
-					
-				</article>
-			<% }) %>
+		<% pizzas.forEach(element => { %>
+			<article>
+				<img src= <%= element.img %>  alt="Pepperoni">
+				<a href= "pizzas/<%= element.id %>" >Ver Mais</a>
+				<button>+ Add</button>
+				<div><%= element.nome %> </div>
+				<span><%= element.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}); %> </span>
+			</article>
+		<% }) %>
 	</main>
 </body>
 </html>
+
+ 
